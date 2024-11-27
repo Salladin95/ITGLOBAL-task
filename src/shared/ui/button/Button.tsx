@@ -1,11 +1,14 @@
 import React from 'react'
 import { cva, VariantProps } from 'class-variance-authority'
 
+import './button.scss'
+
 const buttonVariants = cva('btn', {
 	variants: {
 		variant: {
 			primary: 'btn--primary',
 			secondary: 'btn--secondary',
+			none: '',
 		},
 	},
 	defaultVariants: {

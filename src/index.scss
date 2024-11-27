@@ -6,4 +6,42 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem; /* Large heading for titles */
+}
+
+h2 {
+  font-size: 2rem; /* Medium heading for sections */
+}
+
+h3 {
+  font-size: 1.75rem; /* Small heading for subsections */
+}
+
+/* Paragraphs */
+.p1, .p2, .p3 {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.p1 {
+  font-size: 1.125rem; /* Slightly larger text for emphasis */
+}
+
+.p2 {
+  font-size: 1rem; /* Standard text for most content */
+}
+
+.p3 {
+  font-size: 0.875rem; /* Smaller text for fine print or notes */
 }

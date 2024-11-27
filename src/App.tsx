@@ -5,7 +5,9 @@ import './index.scss'
 function App() {
 	return (
 		<main className='app'>
-			<Button>Click me</Button>
+			<Button>Primary</Button>
+			<Button variant={'secondary'}>Secondary</Button>
+			<Button variant={'none'}>None</Button>
 		</main>
 	)
 }
