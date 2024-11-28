@@ -6,13 +6,18 @@ import './button.scss'
 const buttonVariants = cva('btn', {
 	variants: {
 		variant: {
-			primary: 'btn--primary',
-			secondary: 'btn--secondary',
+			primary: 'btn--variant--primary',
+			secondary: 'btn--variant--secondary',
 			none: '',
+		},
+		size: {
+			default: 'btn--size--default',
+			sm: 'btn--size--sm',
 		},
 	},
 	defaultVariants: {
 		variant: 'primary',
+		size: 'default',
 	},
 })
 
@@ -20,10 +25,20 @@ export type ButtonVariant = VariantProps<typeof buttonVariants>
 
 export type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
 	variant?: ButtonVariant['variant']
-  children: React.ReactNode; // Children is a required field
+	size?: ButtonVariant['size']
+	children: React.ReactNode // Children is a required field
 }
 
 export function Button(props: ButtonProps) {
-	const { className, variant, ...rest } = props
-	return <button className={buttonVariants({ className, variant })} {...rest} />
+	const { className, variant, size, ...rest } = props
+	return (
+		<button
+			className={buttonVariants({
+				className,
+				variant,
+				size,
+			})}
+			{...rest}
+		/>
+	)
 }
