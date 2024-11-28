@@ -1,10 +1,10 @@
 import React from 'react'
-import { focusFirstInput } from '~/shared/utils'
+import { cn, focusFirstInput } from '~/shared/utils'
 import { cva, VariantProps } from 'class-variance-authority'
 
 import './input.scss'
 
-const inputVariants = cva('input-wrapper__input', {
+const inputVariants = cva('input-wrapper__input p3', {
 	variants: {
 		variant: {
 			primary: ['input-wrapper__input_primary'],
@@ -46,22 +46,28 @@ export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, 'pref
 export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
 	const { id, variant, size, className, error, prefix, suffix, ...rest } = props
 	return (
-		<div className={`input-wrapper ${error ? 'input-wrapper_error' : ''}`} onClick={focusFirstInput}>
-			{prefix && <div className="input-wrapper__prefix">{prefix}</div>}
+		<div
+			className={cn('input-wrapper', className, {
+				'input-wrapper_error': error,
+				'pr-2': Boolean(suffix),
+				'pl-2': Boolean(prefix),
+			})}
+			onClick={focusFirstInput}
+		>
+			{prefix ?? null}
 			<input
 				aria-invalid={error}
 				autoComplete="off"
 				className={inputVariants({
 					variant,
 					size,
-					className,
 				})}
 				data-error={error}
 				id={id}
 				ref={ref}
 				{...rest}
 			/>
-			{suffix && <div className="input-wrapper__suffix">{suffix}</div>}
+			{suffix && null}
 		</div>
 	)
 })

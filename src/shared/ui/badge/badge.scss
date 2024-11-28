@@ -1,0 +1,17 @@
+@use '~/shared/styles/colors' as c;
+@use '~/shared/styles/mixins/utilities' as u;
+
+.badge {
+	border-radius: 0.25rem;
+	border: 1px solid c.$blue-400;
+	background-color: c.$blue-100;
+	gap: 0.5rem;
+
+	@include u.flexbox(center);
+	@include u.px(0.5rem);
+	@include u.py(0.125rem);
+
+  &__suffix {
+    cursor: pointer;
+  }
+}

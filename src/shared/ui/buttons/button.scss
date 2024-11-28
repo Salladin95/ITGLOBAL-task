@@ -20,11 +20,11 @@
 
 .btn {
   &_variant--primary {
-    background-color: c.$blue;
+    background-color: c.$blue-600;
     color: c.$white;
 
     &:hover {
-      background-color: color.adjust(c.$blue, $lightness: 15%, $space: hsl);
+      background-color: color.adjust(c.$blue-600, $lightness: 15%, $space: hsl);
     }
   }
 

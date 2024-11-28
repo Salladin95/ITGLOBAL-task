@@ -3,15 +3,22 @@
 @use '~/shared/styles/mixins/utilities' as u;
 
 .input-wrapper {
+	width: 100%;
 	display: flex;
 	align-items: center;
-	position: relative;
 	border: 1px solid c.$gray;
 	border-radius: 4px;
 	padding: 0;
-	transition: border-color 0.5s ease, box-shadow 0.5s ease;
+	transition:
+		border-color 0.5s ease,
+		box-shadow 0.5s ease;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+	box-sizing: border-box;
+	@include u.py(0.25rem);
 
-	&:focus-within, &:hover {
+	&:focus-within,
+	&:hover {
 		border-color: color.adjust(c.$gray, $lightness: -15%, $space: hsl);
 		box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
 	}
@@ -20,8 +27,7 @@
 		border-color: c.$red;
 
 		.input-wrapper__input {
-
-		color: c.$red;
+			color: c.$red;
 		}
 	}
 
@@ -30,18 +36,6 @@
 		border: none;
 		outline: none;
 		background: transparent;
-		padding: 0.5rem;
-	}
-
-	&__prefix,
-	&__suffix {
-		padding: 0.5rem;
-		&.input-wrapper__prefix {
-			margin-right: 0.25rem;
-		}
-		&.input-wrapper__suffix {
-			margin-left: 0.25rem;
-		}
+		@include u.px(0.5rem);
 	}
 }
-

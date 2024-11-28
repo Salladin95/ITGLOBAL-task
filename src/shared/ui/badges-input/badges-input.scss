@@ -1,0 +1,16 @@
+.badges-input-wrapper {
+	width: 100%;
+
+	.badges-input {
+		width: 100%;
+		position: relative;
+
+		&__clear-icon {
+			cursor: pointer;
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			z-index: 10;
+		}
+	}
+}
