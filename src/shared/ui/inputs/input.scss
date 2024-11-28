@@ -19,13 +19,13 @@
 	&.input-wrapper_error {
 		border-color: c.$red;
 
-		.input {
+		.input-wrapper__input {
 
 		color: c.$red;
 		}
 	}
 
-	.input {
+	.input-wrapper__input {
 		flex: 1;
 		border: none;
 		outline: none;

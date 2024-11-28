@@ -4,11 +4,11 @@ import { cva, VariantProps } from 'class-variance-authority'
 
 import './input.scss'
 
-const inputVariants = cva('input', {
+const inputVariants = cva('input-wrapper__input', {
 	variants: {
 		variant: {
-			primary: ['input_primary'],
-			secondary: ['input_secondary'],
+			primary: ['input-wrapper__input_primary'],
+			secondary: ['input-wrapper__input_secondary'],
 			none: [],
 		},
 		size: {

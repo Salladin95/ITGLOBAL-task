@@ -1,6 +1,6 @@
+@use '~/shared/styles/mixins/utilities' as u;
+@use '~/shared/styles/mixins/typography' as t;
 @import url('./reset.scss');
-@import '~/shared/styles/mixins/typography';
-@import '~/shared/styles/mixins/utilities';
 
 .app {
   width: 100%;
@@ -28,11 +28,11 @@
 }
 
 .flex {
-  @include flexbox();
+  @include u.flexbox();
 }
 
 .flex-center {
-  @include center();
+  @include u.center();
 }
 
 .flex-row {
@@ -70,25 +70,25 @@
 
 
 .h1 {
-  @include heading(1);
+  @include t.heading(1);
 }
 
 .h2 {
-  @include heading(2);
+  @include t.heading(2);
 }
 
 .h3 {
-  @include heading(3);
+  @include t.heading(3);
 }
 
 .p1 {
-  @include heading(1.125rem);
+  @include t.heading(1.125rem);
 }
 
 .p2 {
-  @include heading(1rem);
+  @include t.heading(1rem);
 }
 
 .p3 {
-  @include heading(0.875rem);
+  @include t.heading(0.875rem);
 }
