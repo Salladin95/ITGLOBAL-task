@@ -1,4 +1,5 @@
-import { AddButton, Button, CalendarButton, Input, SearchButton, BadgesInput } from '~/shared/ui'
+import { BadgesInput } from '~/features'
+import { AddButton, Button, CalendarButton, Input, SearchButton } from '~/shared/ui'
 import {
 	AddIcon,
 	CalendarIcon,
@@ -26,6 +27,7 @@ export function UiKit() {
 					<CalendarButton />
 				</div>
 			</section>
+
 			<section className="w-full mb-4">
 				<h1 className="text-center">Icons</h1>
 				<div className="w-full flex-center gap-4">
@@ -41,15 +43,14 @@ export function UiKit() {
 					<RightArrowIcon />
 				</div>
 			</section>
+
 			<section className="w-md mx-auto">
 				<h1 className="text-center">Inputs</h1>
 				<div className="w-full flex-center flex-col gap-4">
-					{/* {/* <Input /> */}
+					<Input />
 					<Input error />
-					<Input prefix={<SearchIcon />} />
-					<Input suffix={<SearchIcon />} />
+					<Input prefix={<SearchIcon />} suffix={<AddIcon />} />
 					<BadgesInput />
-					<BadgesInput hasBadgeRemoveSuffix />
 				</div>
 			</section>
 		</div>
