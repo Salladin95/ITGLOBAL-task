@@ -6,13 +6,13 @@ import './button.scss'
 const buttonVariants = cva('btn', {
 	variants: {
 		variant: {
-			primary: 'btn--variant--primary',
-			secondary: 'btn--variant--secondary',
+			primary: 'btn_variant--primary',
+			secondary: 'btn_variant--secondary',
 			none: '',
 		},
 		size: {
-			default: 'btn--size--default',
-			sm: 'btn--size--sm',
+			default: 'btn_size--default',
+			sm: 'btn_size--sm',
 		},
 	},
 	defaultVariants: {

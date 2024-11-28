@@ -35,6 +35,18 @@
   @include center();
 }
 
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .icon {
   width: 1.25rem;
   height: 1.25rem;

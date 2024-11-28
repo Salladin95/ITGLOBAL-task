@@ -1,4 +1,4 @@
-import { AddButton, Button, CalendarButton, SearchButton } from '~/shared/ui'
+import { AddButton, Button, CalendarButton, Input, InputWithClear, InputWithFilter, SearchButton } from '~/shared/ui'
 import {
 	AddIcon,
 	CalendarIcon,
@@ -26,7 +26,7 @@ export function UiKit() {
 					<CalendarButton />
 				</div>
 			</section>
-			<section className="w-full">
+			<section className="w-full mb-4">
 				<h1 className="text-center">Icons</h1>
 				<div className="w-full flex-center gap-4">
 					<AddIcon />
@@ -39,6 +39,17 @@ export function UiKit() {
 					<SideBarIcon />
 					<StarIcon />
 					<RightArrowIcon />
+				</div>
+			</section>
+			<section className="w-full">
+				<h1 className="text-center">Inputs</h1>
+				<div className="w-full flex-center flex-col gap-4">
+					<Input />
+					<Input error />
+					<Input prefix={<SearchIcon />} />
+					<Input suffix={<SearchIcon />} />
+					<InputWithClear />
+					<InputWithFilter />
 				</div>
 			</section>
 		</div>
