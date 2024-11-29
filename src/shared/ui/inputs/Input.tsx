@@ -4,7 +4,7 @@ import { cva, VariantProps } from 'class-variance-authority'
 
 import './input.scss'
 
-const inputVariants = cva('input-wrapper__input p3', {
+const inputVariants = cva('input-wrapper__input input p3', {
 	variants: {
 		variant: {
 			primary: ['input-wrapper__input_primary'],
@@ -65,7 +65,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 				ref={ref}
 				{...rest}
 			/>
-			{suffix && null}
+			{suffix ?? null}
 		</div>
 	)
 })

@@ -1,3 +1,4 @@
+export * from './Logo'
 export * from './AddIcon'
 export * from './PinIcon'
 export * from './StarIcon'

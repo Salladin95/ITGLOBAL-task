@@ -1,12 +1,16 @@
-import { UiKit } from './widgets'
+// import { UiKit } from './widgets'
+import { Header } from './widgets/header'
 
 import './index.scss'
 
 function App() {
 	return (
-		<main className="app">
-			<UiKit />
-		</main>
+		<>
+			<Header />
+			<main className="app">
+				{/* <UiKit /> */}
+			</main>
+		</>
 	)
 }
 

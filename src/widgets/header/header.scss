@@ -1,0 +1,71 @@
+@use '~/shared/styles/colors' as c;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.75rem 1rem;
+	border-bottom: 1px solid c.$gray;
+
+	.side-bar-icon {
+		display: none;
+	}
+
+	.logo {
+		margin-right: 1rem;
+	}
+
+	&__controls {
+		display: flex;
+	}
+
+	.input {
+		width: 18.5rem;
+	}
+
+	.search-icon {
+		color: c.$gray;
+	}
+
+	.profile {
+		display: flex;
+		align-items: center;
+
+		&__avatar {
+			border-radius: 100%;
+			margin-right: 0.5rem;
+		}
+
+		&__name {
+			white-space: nowrap;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.header {
+		.side-bar-icon {
+			display: block;
+		}
+
+		.logo-icon {
+			display: none;
+		}
+
+		.input-wrapper {
+			display: none;
+		}
+
+		.profile {
+			cursor: pointer;
+
+			&__avatar {
+				margin-right: 0;
+			}
+
+			&__name {
+				display: none;
+			}
+		}
+	}
+}

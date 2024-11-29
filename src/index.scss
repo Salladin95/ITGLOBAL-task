@@ -1,3 +1,4 @@
+@use '~/shared/styles/colors' as c;
 @use '~/shared/styles/mixins/utilities' as u;
 @use '~/shared/styles/mixins/typography' as t;
 @import url('./reset.scss');
@@ -152,4 +153,24 @@ body {
 
 .p3 {
 	@include t.paragraph(0.875rem, 1.25rem);
+}
+
+.logo {
+	width: 10.875rem;
+	height: 1.5rem;
+}
+
+.search-icon {
+	color: #2e3238;
+}
+
+.side-bar-icon {
+	color: c.$dark-gray;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&[data-active='true'],
+	&:hover {
+		color: c.$blue-500;
+	}
 }
