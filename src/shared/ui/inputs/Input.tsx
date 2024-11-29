@@ -49,8 +49,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>((props, ref)
 		<div
 			className={cn('input-wrapper', className, {
 				'input-wrapper_error': error,
-				'pr-2': Boolean(suffix),
-				'pl-2': Boolean(prefix),
 			})}
 			onClick={focusFirstInput}
 		>

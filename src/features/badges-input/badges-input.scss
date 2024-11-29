@@ -1,5 +1,9 @@
+@use '~/shared/styles/colors' as c;
+@use '~/shared/styles/mixins/utilities' as u;
+
 .badges-input-wrapper {
-	width: 100%;
+	// width: 100%;
+	width: 320px;
 
 	.badges-input {
 		width: 100%;
@@ -12,5 +16,36 @@
 			right: 8px;
 			z-index: 10;
 		}
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.badges-input-wrapper {
+		.input-wrapper {
+			flex-direction: column;
+			align-items: start;
+		}
+	}
+}
+
+.badge {
+	border-radius: 0.25rem;
+	border: 1px solid c.$blue-400;
+	background-color: c.$blue-100;
+	height: 1.5rem;
+
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+
+	@include u.px(0.5rem);
+	@include u.py(0.125rem);
+
+	&__title {
+		white-space: nowrap;
+	}
+
+	&__suffix {
+		cursor: pointer;
 	}
 }

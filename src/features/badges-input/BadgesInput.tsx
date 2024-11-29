@@ -1,13 +1,14 @@
 import React from 'react'
-import { Badge } from '~/shared/ui/badge'
 import { Input } from '~/shared/ui/inputs'
 import { ClearIcon } from '~/shared/ui/icons'
+import { RemoveIcon } from '~/shared/ui/icons'
 import { AddButton, SearchButton } from '~/shared/ui/buttons'
 
 import './badges-input.scss'
+import { useHasOverflow } from '~/shared/hooks'
 
 export function BadgesInput() {
-	const [badges, setBadges] = React.useState<React.ReactNode[]>([])
+	const [badges, setBadges] = React.useState<string[]>([])
 	const inputRef = React.useRef<HTMLInputElement>(null!)
 
 	function handleAddBadge() {
@@ -52,5 +53,28 @@ export function BadgesInput() {
 				<SearchButton />
 			</div>
 		</div>
+	)
+}
+
+type BadgeProps = {
+	title: string
+	onRemove?: () => void
+}
+
+const MAX_TITLE_SYMBOLS = 32
+
+export function Badge(props: BadgeProps) {
+	const { title, onRemove } = props
+	const badgeRef = React.useRef<HTMLDivElement>(null)
+	const hasOverflow = useHasOverflow(badgeRef, '.badges-input-wrapper')
+
+	// Truncate the title if it overflows
+	const truncatedTitle = hasOverflow ? `${title.slice(0, MAX_TITLE_SYMBOLS)}...` : title
+
+	return (
+		<span ref={badgeRef} className="badge p3">
+			<span className="badge__title">{truncatedTitle}</span>
+			{onRemove && <RemoveIcon className="badge__suffix" onClick={onRemove} />}
+		</span>
 	)
 }
