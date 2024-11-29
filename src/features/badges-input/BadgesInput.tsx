@@ -1,13 +1,15 @@
 import React from 'react'
-import { Input } from '~/shared/ui/inputs'
 import { ClearIcon } from '~/shared/ui/icons'
 import { RemoveIcon } from '~/shared/ui/icons'
+import { useHasOverflow } from '~/shared/hooks'
+import { Input, InputProps } from '~/shared/ui/inputs'
 import { AddButton, SearchButton } from '~/shared/ui/buttons'
 
 import './badges-input.scss'
-import { useHasOverflow } from '~/shared/hooks'
 
-export function BadgesInput() {
+type BadgesInputProps = InputProps
+
+export function BadgesInput(props: BadgesInputProps) {
 	const [badges, setBadges] = React.useState<string[]>([])
 	const inputRef = React.useRef<HTMLInputElement>(null!)
 
@@ -36,6 +38,7 @@ export function BadgesInput() {
 		<div className="badges-input-wrapper flex gap-1">
 			<div className="badges-input">
 				<Input
+					{...props}
 					ref={inputRef}
 					prefix={
 						<>

@@ -1,8 +1,11 @@
 import { cn } from '~/shared/utils'
 import { PropsWithChildren, PropsWithClassName } from '~/shared/types'
 
+import './form-field.scss'
+
 type FormFieldProps = {
 	error?: string
+	required?: boolean
 } & Required<PropsWithChildren> &
 	PropsWithClassName
 
@@ -12,16 +15,17 @@ type FormFieldWithLabelProps = {
 } & FormFieldProps
 
 export function FormFieldWithLabel(props: FormFieldWithLabelProps) {
-	const { id, label, children, error, className } = props
+	const { id, label, children, error, className, required } = props
 	return (
-		<div className={cn('relative text-primary', className, { 'text-red-400': Boolean(error) })}>
-			{label && (
-				<label className={'cursor-pointer inline-block mb-2'} htmlFor={id}>
+		<div data-error={Boolean(error)} className={cn('form-field', className)}>
+			<div className='flex gap-1'>
+				{Boolean(required) && <span className="form-field__required">*</span>}
+				<label className={'form-field__label'} htmlFor={id}>
 					{label}
 				</label>
-			)}
+			</div>
 			{children}
-			{error && <span className={'absolute right-0 -bottom-6'}>{error}</span>}
+			{error && <span className={'form-field__error'}>{error}</span>}
 		</div>
 	)
 }
@@ -29,9 +33,9 @@ export function FormFieldWithLabel(props: FormFieldWithLabelProps) {
 export function FormField(props: FormFieldProps) {
 	const { children, error, className } = props
 	return (
-		<div className={cn({ 'text-red-400': Boolean(error) }, 'relative', className)}>
+		<div data-error={Boolean(error)} className={cn('form-field', className)}>
 			{children}
-			{error && <span className={'absolute right-0 -bottom-6'}>{error}</span>}
+			{error && <span className={'form-field__error'}>{error}</span>}
 		</div>
 	)
 }

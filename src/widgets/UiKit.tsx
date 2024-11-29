@@ -1,5 +1,5 @@
 import { BadgesInput } from '~/features'
-import { AddButton, Button, CalendarButton, Input, SearchButton } from '~/shared/ui'
+import { AddButton, Button, CalendarButton, FormField, FormFieldWithLabel, Input, SearchButton } from '~/shared/ui'
 import {
 	AddIcon,
 	CalendarIcon,
@@ -51,6 +51,18 @@ export function UiKit() {
 					<Input error />
 					<Input prefix={<SearchIcon />} suffix={<AddIcon />} />
 					<BadgesInput />
+
+					<FormFieldWithLabel id="form-field1" label="Sth" required>
+						<BadgesInput id="form-field1" />
+					</FormFieldWithLabel>
+
+					<FormFieldWithLabel id="form-field" label="Ответственный">
+						<BadgesInput id="form-field" />
+					</FormFieldWithLabel>
+
+					<FormField error='Sth went wrong'>
+						<Input />
+					</FormField>
 				</div>
 			</section>
 		</div>

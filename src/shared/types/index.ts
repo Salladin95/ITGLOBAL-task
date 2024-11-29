@@ -6,4 +6,6 @@ export type PropsWithClassName = {
   className?: string
 }
 
-export type PropsWithChildren = React.PropsWithChildren<React.ReactNode>
+export type PropsWithChildren = {
+  children?: React.ReactNode
+}
