@@ -1,0 +1,45 @@
+@use '~/shared/styles/colors' as c;
+@use '~/shared/styles/mixins/utilities' as u;
+@use '~/shared/styles/mixins/typography' as t;
+
+.side-bar {
+	display: flex;
+	height: 95vh;
+
+	&__controls {
+		@include u.gray-border(right);
+		border-right: 1px solid c.$gray;
+
+		@include u.py(2rem);
+		@include u.px(1rem);
+
+		.side-bar-icon {
+			margin-bottom: 2rem;
+		}
+	}
+
+	&__filter-wrapper {
+		display: flex;
+		padding: 1rem;
+		gap: 0.5rem;
+		@include u.gray-border(right);
+		@include u.gray-border(bottom);
+	}
+
+	&__nav {
+		height: 100%;
+		@include u.gray-border(right);
+		padding: 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.625rem;
+
+		.nav-item {
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			@include t.paragraph(0.875rem, 1.25rem);
+		}
+	}
+}

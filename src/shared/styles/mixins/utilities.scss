@@ -1,3 +1,5 @@
+@use '~/shared/styles/colors' as c;
+
 @mixin flexbox($align: stretch, $justify: flex-start, $direction: row) {
   display: flex;
   align-items: $align;
@@ -68,4 +70,8 @@
 @mixin m($y, $x) {
   @include my($y);
   @include mx($x);
+}
+
+@mixin gray-border($direction: bottom) {
+  border-#{$direction}: 1px solid c.$gray;
 }
