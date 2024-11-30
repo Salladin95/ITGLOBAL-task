@@ -10,7 +10,7 @@ export function SideBar() {
 				<SideBarIcon />
 				<StarIcon className="cursor-pointer" />
 			</div>
-			<div className='side-bar__nav-menu'>
+			<div className="side-bar__nav-menu">
 				<div className="side-bar__filter-wrapper">
 					<Input suffix={<FilterIcon />} />
 					<Button variant={'secondary'}>
@@ -19,7 +19,7 @@ export function SideBar() {
 				</div>
 				<div className="side-bar__nav">
 					{MENU_ITEMS.map((menuItem) => (
-						<div className="nav-item">
+						<div key={menuItem} className="nav-item">
 							<RightArrowIcon />
 							<p>{menuItem}</p>
 						</div>

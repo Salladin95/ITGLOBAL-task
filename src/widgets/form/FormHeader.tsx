@@ -1,9 +1,12 @@
 import { Button } from '~/shared/ui'
+
 import './form-header.scss'
 
-export function FormHeader() {
+type FormHeaderProps = { hasScrolled: boolean }
+export function FormHeader(props: FormHeaderProps) {
+	const { hasScrolled } = props
 	return (
-		<div className="form-header">
+		<div data-scrolled={hasScrolled} className="form-header">
 			<div className="form-header__block form-header__sub-task-block">
 				<p className="form-header__sub-task">Подзадача</p>
 				<Button variant={'secondary'}>Создать</Button>
