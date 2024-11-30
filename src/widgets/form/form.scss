@@ -1,0 +1,26 @@
+@use '~/shared/styles/mixins/utilities' as u;
+@use '~/shared/styles/mixins/typography' as t;
+
+.main-form {
+	display: block;
+	width: 100%;
+
+	@include u.px(1rem);
+	@include t.typography(1.5rem, 600, 2rem, -0.02em);
+
+	&__title {
+		margin-bottom: 1.5rem;
+	}
+
+	&__fields-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	&__full-fields-wrapper {
+		@include u.my(1rem);
+		display: grid;
+		gap: 1rem;
+	}
+}

@@ -1,5 +1,5 @@
 // import { UiKit } from './widgets'
-import { Header , SideBar } from './widgets/'
+import { Header, SideBar, Form } from './widgets/'
 
 import './index.scss'
 
@@ -9,6 +9,7 @@ function App() {
 			<Header />
 			<main className="app">
 				<SideBar />
+				<Form />
 				{/* <UiKit /> */}
 			</main>
 		</>

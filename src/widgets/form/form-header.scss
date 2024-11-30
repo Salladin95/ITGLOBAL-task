@@ -1,0 +1,28 @@
+@use '~/shared/styles/colors' as c;
+@use '~/shared/styles/mixins/utilities' as u;
+
+.form-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	@include u.px(1rem);
+	@include u.py(1.25rem);
+
+	& > div {
+		display: flex;
+		align-items: center;
+
+		&:first-child {
+			gap: 1rem;
+		}
+
+		&:last-child {
+			gap: 0.25rem;
+		}
+	}
+
+  &__sub-task {
+    font-size: 1.25rem;
+  }
+}

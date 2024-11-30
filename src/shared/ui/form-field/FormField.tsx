@@ -10,12 +10,12 @@ type FormFieldProps = {
 	PropsWithClassName
 
 type FormFieldWithLabelProps = {
-	id: string
+	forId: string
 	label: string
 } & FormFieldProps
 
 export function FormFieldWithLabel(props: FormFieldWithLabelProps) {
-	const { id, label, children, error, className, required } = props
+	const { forId: id, label, children, error, className, required } = props
 	return (
 		<div data-error={Boolean(error)} className={cn('form-field', className)}>
 			<div className='flex gap-1'>

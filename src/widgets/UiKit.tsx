@@ -52,11 +52,11 @@ export function UiKit() {
 					<Input prefix={<SearchIcon />} suffix={<AddIcon />} />
 					<BadgesInput />
 
-					<FormFieldWithLabel id="form-field1" label="Sth" required>
+					<FormFieldWithLabel forId="form-field1" label="Sth" required>
 						<BadgesInput id="form-field1" />
 					</FormFieldWithLabel>
 
-					<FormFieldWithLabel id="form-field" label="Ответственный">
+					<FormFieldWithLabel forId="form-field" label="Ответственный">
 						<BadgesInput id="form-field" />
 					</FormFieldWithLabel>
 
