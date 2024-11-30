@@ -29,10 +29,11 @@ export type ButtonProps = React.HTMLAttributes<HTMLButtonElement> & {
 	children: React.ReactNode // Children is a required field
 }
 
-export function Button(props: ButtonProps) {
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
 	const { className, variant, size, ...rest } = props
 	return (
 		<button
+			ref={ref}
 			className={buttonVariants({
 				className,
 				variant,
@@ -41,4 +42,6 @@ export function Button(props: ButtonProps) {
 			{...rest}
 		/>
 	)
-}
+})
+
+Button.displayName = 'Button'

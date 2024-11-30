@@ -1,5 +1,6 @@
 @use '~/shared/styles/colors' as c;
 @use '~/shared/styles/mixins/utilities' as u;
+@use '~/shared/styles/mixins/typography' as t;
 
 .form-header {
 	display: flex;
@@ -35,6 +36,42 @@
 	}
 }
 
+.sub-task-dialog-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	@include u.py(1.75rem);
+	@include u.px(1.5rem);
+
+	&__title {
+		@include t.paragraph(1.25rem);
+	}
+
+	&__cancel-btn {
+		display: none;
+	}
+
+	&__submit-controls {
+		display: flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+}
+
+.sub-task-dialog-content {
+	@include u.px(1.5rem);
+
+	&__title {
+		margin-bottom: 1rem;
+		@include t.typography(1.5rem, 600, 2rem);
+	}
+
+	&__submit-controls {
+		display: none;
+	}
+}
+
 @media screen and (max-width: 767px) {
 	.form-header {
 		&__sub-task-block {
@@ -48,6 +85,23 @@
 
 		&__submit-controls {
 			display: none;
+		}
+	}
+
+	.sub-task-dialog-header {
+		&__cancel-btn {
+			display: block;
+		}
+		&__submit-controls {
+			display: none;
+		}
+	}
+
+	.sub-task-dialog-content {
+		&__submit-controls {
+			margin-top: 1rem;
+			display: grid;
+			gap: 1rem;
 		}
 	}
 }

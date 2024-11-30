@@ -15,26 +15,5 @@
 		@include t.typography(1.5rem, 600, 2rem, -0.02em);
 		@include u.px(1rem);
 	}
-
-	&__fields-wrapper {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 1rem;
-		@include u.px(1rem);
-	}
-
-	&__full-fields-wrapper {
-		@include u.my(1rem);
-		display: grid;
-		gap: 1rem;
-		@include u.px(1rem);
-	}
 }
 
-@media screen and (max-width: 991px) {
-	.main-form {
-		&__fields-wrapper {
-			grid-template-columns: repeat(1, 1fr);
-		}
-	}
-}

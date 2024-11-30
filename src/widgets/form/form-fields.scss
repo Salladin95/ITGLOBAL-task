@@ -1,0 +1,39 @@
+@use '~/shared/styles/mixins/utilities' as u;
+
+.main-form {
+	.form-fields-wrapper {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		@include u.px(1rem);
+	}
+
+	.form-full-fields-wrapper {
+		display: grid;
+		gap: 1rem;
+
+		@include u.px(1rem);
+		@include u.my(1rem);
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.main-form {
+		.form-fields-wrapper {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+}
+
+.sub-task-dialog-content {
+	.form-fields-wrapper {
+		display: grid;
+		gap: 1rem;
+	}
+
+	.form-full-fields-wrapper {
+		display: grid;
+		gap: 1rem;
+		@include u.my(1rem);
+	}
+}
