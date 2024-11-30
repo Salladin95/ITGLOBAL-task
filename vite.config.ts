@@ -13,5 +13,5 @@ export default defineConfig({
 			'~': pathSrc,
 		},
 	},
-	base: '/vite-deploy-demo/'
+	base: '/itglobal-task//'
 })
