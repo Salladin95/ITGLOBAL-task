@@ -13,5 +13,5 @@ export default defineConfig({
 			'~': pathSrc,
 		},
 	},
-	base: '/itglobal-task//'
+	base: '/itglobal-task/'
 })
