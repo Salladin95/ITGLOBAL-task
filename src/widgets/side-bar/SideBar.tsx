@@ -10,7 +10,7 @@ export function SideBar() {
 				<SideBarIcon />
 				<StarIcon className="cursor-pointer" />
 			</div>
-			<div>
+			<div className='side-bar__nav-menu'>
 				<div className="side-bar__filter-wrapper">
 					<Input suffix={<FilterIcon />} />
 					<Button variant={'secondary'}>

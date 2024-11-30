@@ -2,7 +2,8 @@
 @use '~/shared/styles/mixins/utilities' as u;
 
 .badges-input-wrapper {
-	width: 100%;
+	max-width: 100%;
+	min-width: 13.75rem;
 
 	.badges-input {
 		width: 100%;
@@ -14,15 +15,6 @@
 			top: 8px;
 			right: 8px;
 			z-index: 10;
-		}
-	}
-}
-
-@media screen and (max-width: 360px) {
-	.badges-input-wrapper {
-		.input-wrapper {
-			flex-direction: column;
-			align-items: start;
 		}
 	}
 }
@@ -40,11 +32,24 @@
 	@include u.px(0.5rem);
 	@include u.py(0.125rem);
 
+	overflow: hidden;
+
 	&__title {
 		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	&__suffix {
 		cursor: pointer;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	.badges-input-wrapper {
+		.input-wrapper {
+			flex-direction: column;
+			align-items: start;
+		}
 	}
 }

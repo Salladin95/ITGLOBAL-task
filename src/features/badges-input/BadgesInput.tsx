@@ -1,7 +1,6 @@
 import React from 'react'
 import { ClearIcon } from '~/shared/ui/icons'
 import { RemoveIcon } from '~/shared/ui/icons'
-import { useHasOverflow } from '~/shared/hooks'
 import { Input, InputProps } from '~/shared/ui/inputs'
 import { AddButton, SearchButton } from '~/shared/ui/buttons'
 
@@ -64,19 +63,12 @@ type BadgeProps = {
 	onRemove?: () => void
 }
 
-const MAX_TITLE_SYMBOLS = 32
-
 export function Badge(props: BadgeProps) {
 	const { title, onRemove } = props
-	const badgeRef = React.useRef<HTMLDivElement>(null)
-	const hasOverflow = useHasOverflow(badgeRef, '.badges-input-wrapper')
-
-	// Truncate the title if it overflows
-	const truncatedTitle = hasOverflow ? `${title.slice(0, MAX_TITLE_SYMBOLS)}...` : title
 
 	return (
-		<span ref={badgeRef} className="badge p3">
-			<span className="badge__title">{truncatedTitle}</span>
+		<span className="badge p3">
+			<span className="badge__title">{title}</span>
 			{onRemove && <RemoveIcon className="badge__suffix" onClick={onRemove} />}
 		</span>
 	)

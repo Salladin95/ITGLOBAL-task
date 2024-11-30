@@ -6,10 +6,15 @@
 	width: 100%;
 
 	@include u.px(1rem);
-	@include t.typography(1.5rem, 600, 2rem, -0.02em);
+
+	overflow: hidden;
 
 	&__title {
 		margin-bottom: 1.5rem;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		@include t.typography(1.5rem, 600, 2rem, -0.02em);
 	}
 
 	&__fields-wrapper {
@@ -22,5 +27,13 @@
 		@include u.my(1rem);
 		display: grid;
 		gap: 1rem;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.main-form {
+		&__fields-wrapper {
+			grid-template-columns: repeat(1, 1fr);
+		}
 	}
 }

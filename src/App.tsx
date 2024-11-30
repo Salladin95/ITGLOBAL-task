@@ -10,7 +10,6 @@ function App() {
 			<main className="app">
 				<SideBar />
 				<Form />
-				{/* <UiKit /> */}
 			</main>
 		</>
 	)

@@ -6,23 +6,35 @@
 	align-items: center;
 	justify-content: space-between;
 
-	@include u.px(1rem);
 	@include u.py(1.25rem);
 
-	& > div {
+	&__block {
 		display: flex;
 		align-items: center;
 
-		&:first-child {
+		&.form-header__sub-task-block {
 			gap: 1rem;
 		}
 
-		&:last-child {
+		&.form-header__submit-controls {
 			gap: 0.25rem;
 		}
 	}
 
-  &__sub-task {
-    font-size: 1.25rem;
-  }
+	&__sub-task {
+		font-size: 1.25rem;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.form-header {
+		&__sub-task-block {
+			flex: 1;
+			justify-content: space-between;
+		}
+
+		&__submit-controls {
+			display: none;
+		}
+	}
 }

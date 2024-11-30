@@ -1,8 +1,8 @@
-import { CalendarButton, FormFieldWithLabel, Input } from '~/shared/ui'
+import { BadgesInput } from '~/features'
 import { FormHeader } from './FormHeader'
+import { CalendarButton, FormFieldWithLabel, Input } from '~/shared/ui'
 
 import './form.scss'
-import { BadgesInput } from '~/features'
 
 export function Form() {
 	return (

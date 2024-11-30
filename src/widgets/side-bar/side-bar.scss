@@ -43,3 +43,17 @@
 		}
 	}
 }
+
+@media screen and (max-width: 991px) {
+	.side-bar {
+		&__nav-menu {
+			display: none;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.side-bar {
+		display: none;
+	}
+}
