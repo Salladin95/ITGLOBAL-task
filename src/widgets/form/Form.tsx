@@ -10,17 +10,14 @@ export function Form() {
 
 	React.useEffect(() => {
 		const handleScroll = () => {
-			console.log('here we are')
-			if (ref.current?.scrollTop > 0) {
-				setHasScrolled(true)
-			} else {
-				setHasScrolled(false)
+			if (ref.current!) {
+				setHasScrolled(ref.current.scrollTop > 0)
 			}
 		}
 
 		const element = ref.current
 		if (element) {
-			element.addEventListener('scroll', handleScroll)
+			element.addEventListener('scroll', handleScroll, { passive: true })
 		}
 
 		return () => {

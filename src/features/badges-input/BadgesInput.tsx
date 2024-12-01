@@ -13,10 +13,14 @@ export function BadgesInput(props: BadgesInputProps) {
 	const inputRef = React.useRef<HTMLInputElement>(null!)
 
 	function handleAddBadge() {
-		if (inputRef.current.value) {
-			setBadges([...badges, inputRef.current.value])
-			inputRef.current.value = ''
+		const newBadge = inputRef.current.value
+
+		if (!newBadge || badges.includes(newBadge)) {
+			return
 		}
+
+		setBadges([...badges, inputRef.current.value])
+		inputRef.current.value = ''
 	}
 
 	function handleEnter(e: React.KeyboardEvent<HTMLInputElement>) {
